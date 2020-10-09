@@ -27,4 +27,36 @@ public class Person
 	{
 		this.age = age;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return capitalize(getFirstName()) 
+				+ " is a " + age + " year old " 
+				+ uncapitalize(this.getClass().getSimpleName());
+	}
+	
+	public String getFirstName()
+	{
+		// everything up to the first space
+		return name.substring(0, name.indexOf(' '));
+	}
+	
+	public String getLastName()
+	{
+		// everything after the last space
+		return name.substring(name.lastIndexOf(' '));
+	}
+	
+	public String capitalize(String s)
+	{
+		// first letter uppercase, all others lowercase
+		return s.substring(0,1).toUpperCase() + s.substring(1).toLowerCase();
+	}
+	
+	public String uncapitalize(String s)
+	{
+		// all letters lowercase
+		return s.toLowerCase();
+	}
 }

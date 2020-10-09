@@ -18,11 +18,4 @@ public class Witch extends Person implements MagicUser
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
-	@Override
-	public String toString()
-	{
-		return name + " is a " + age + " year old " + this.getClass().getSimpleName();
-	}
-
 }

@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 import testwizardry.Gender;
 import testwizardry.MagicUser;
-import testwizardry.Person;
+import testwizardry.Witch;
 import testwizardry.Wizard;
 
 public class TestWizardryConsole
 {
 	static Scanner input;
-	MagicUser player;
+	static MagicUser player;
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
 		input = new Scanner(System.in);
 		
@@ -22,14 +22,34 @@ public class TestWizardryConsole
 		Gender gender = askGender();
 		int age = askAge();
 		
-		if (gender.equals(Gender.female))
-		{
-			
-		}
+		player = createPlayer(name, gender, age);
+		
+		System.out.println(player);
 		
 		input.close();
 	}
 	
+	private static MagicUser createPlayer(String name, Gender gender, int age) throws Exception
+	{
+		MagicUser player;
+		
+		if (gender.equals(Gender.female))
+		{
+			player = new Witch(name, age);
+		}
+		else if (gender.equals(Gender.male))
+		{
+			player = new Wizard(name, age);
+		}
+		else
+		{
+			throw new Exception("No gender specified");
+		}
+		
+		return player;
+		
+	}
+
 	public static String askName()
 	{
 		print("What is your name?");
