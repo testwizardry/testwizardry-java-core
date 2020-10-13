@@ -2,8 +2,8 @@ package testwizardry;
 
 public class Muggle extends Person
 {
-	public Muggle(String name, int age)
+	public Muggle(String name, Gender gender, int age)
 	{
-		super(name, Gender.male, age);
+		super(name, gender, age);
 	}
 }

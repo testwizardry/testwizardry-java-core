@@ -3,14 +3,17 @@ package testwizardry.console;
 import java.util.Scanner;
 
 import testwizardry.Gender;
+import testwizardry.Hogwarts;
 import testwizardry.MagicUser;
+import testwizardry.Person;
+import testwizardry.School;
 import testwizardry.Witch;
 import testwizardry.Wizard;
 
 public class TestWizardryConsole
 {
 	static Scanner input;
-	static MagicUser player;
+	static Person player;
 	
 	public static void main(String[] args) throws Exception
 	{
@@ -23,15 +26,26 @@ public class TestWizardryConsole
 		int age = askAge();
 		
 		player = createPlayer(name, gender, age);
-		
 		System.out.println(player);
+		
+		School hogwarts = new Hogwarts();
+		boolean admitted = hogwarts.accept(player);
+		
+		if (admitted)
+		{
+			System.out.println("Congratulations, you've been admitted to Hogwarts!");
+		}
+		else
+		{
+			System.out.println("Sorry, you were not admitted to Hogwarts");
+		}
 		
 		input.close();
 	}
 	
-	private static MagicUser createPlayer(String name, Gender gender, int age) throws Exception
+	private static Person createPlayer(String name, Gender gender, int age) throws Exception
 	{
-		MagicUser player;
+		Person player;
 		
 		if (gender.equals(Gender.female))
 		{
