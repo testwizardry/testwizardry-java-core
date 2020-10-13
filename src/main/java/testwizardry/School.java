@@ -2,5 +2,5 @@ package testwizardry;
 
 public interface School
 {
-	boolean accept(Person person);
+	boolean admit(Person person);
 }

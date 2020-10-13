@@ -2,7 +2,7 @@ package testwizardry;
 
 public class Hogwarts implements School
 {
-	public boolean accept(Person person)
+	public boolean admit(Person person)
 	{
 		if (person.age != 11)
 		{

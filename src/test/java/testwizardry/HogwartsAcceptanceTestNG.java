@@ -76,7 +76,7 @@ public class HogwartsAcceptanceTestNG
 	{
 		System.out.println(person);	
 
-		boolean accepted = school.accept(person);
+		boolean accepted = school.admit(person);
 
 		if (accepted)
 		{

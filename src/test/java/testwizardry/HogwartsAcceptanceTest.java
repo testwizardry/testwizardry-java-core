@@ -28,7 +28,7 @@ public class HogwartsAcceptanceTest
 		{	
 			Person person = people.get(i);
 			
-			if (hogwarts.accept(person))
+			if (hogwarts.admit(person))
 			{
 				System.out.println("Congratulations, " + person.name + " you've been accepted to Hogwarts");
 			}

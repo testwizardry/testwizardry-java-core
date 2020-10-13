@@ -29,7 +29,7 @@ public class TestWizardryConsole
 		System.out.println(player);
 		
 		School hogwarts = new Hogwarts();
-		boolean admitted = hogwarts.accept(player);
+		boolean admitted = hogwarts.admit(player);
 		
 		if (admitted)
 		{
