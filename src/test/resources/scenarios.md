@@ -9,16 +9,16 @@ Apply to Hogwarts School of Witchcraft & Wizardry
  - Specify gender -- wizard or witch (muggles not allowed)
  - Give you age (must be 11 years old to attend)
 
-	person = new Person(name, gender, age)
+	player = new Person(name, gender, age)
 
 - Apply to Hogwarts
 
-	letter = Hogwarts.apply(person)
+	letter = Hogwarts.apply(player)
 
 - Acceptance / Rejection
 
 	if (letter == accepted)
-		Hogwards.enroll(person)
+		Hogwards.enroll(player)
 
 - Off to Diagon alley
 
@@ -34,6 +34,14 @@ Apply to Hogwarts School of Witchcraft & Wizardry
 
 3. Catch the Hogwarts Express
 
+* Kings Cross Station
+* Platform 9 3/4
+* Onboard the train
+* Sweets
+* Dementor (chance of encounter)
+
 4. Great Hall
 Welcome
 Sorting Hat - Assign House
+
+	sortingHat.
