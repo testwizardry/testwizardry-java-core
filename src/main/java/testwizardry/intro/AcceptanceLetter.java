@@ -8,14 +8,16 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.stream.Collectors;
 
+import testwizardry.Person;
+
 public class AcceptanceLetter
 {
 	Wizard wizard;
 	String letter;
 	
-	public AcceptanceLetter(Wizard wizard)
+	public AcceptanceLetter(Wizard player)
 	{
-		this.wizard = wizard;
+		this.wizard = player;
 		load("HogwartsAcceptanceLetter.txt");
 	}
 	

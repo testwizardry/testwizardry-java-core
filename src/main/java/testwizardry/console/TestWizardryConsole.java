@@ -9,41 +9,45 @@ import testwizardry.Person;
 import testwizardry.School;
 import testwizardry.Witch;
 import testwizardry.Wizard;
+import testwizardry.AcceptanceLetter;
 
 public class TestWizardryConsole
 {
 	static Scanner input;
 	static Person player;
+	static School school;
 	
 	public static void main(String[] args) throws Exception
 	{
 		input = new Scanner(System.in);
 		
 		print("Welcome to Test Wizardry!");
-		
 		String name = askName();
-		
 		print("Tell me a bit about yourself.");
-
 		Gender gender = askGender();
 		int age = askAge();
 		
 		player = createPlayer(name, gender, age);
 		System.out.println(player);
 		
-		School hogwarts = new Hogwarts();
-		boolean accepted = hogwarts.admit(player);
+		school = new Hogwarts();
+		boolean accepted = school.admit(player);
 		
 		if (accepted)
 		{
-			System.out.println("Congratulations, you've just been accepted to Hogwarts!");
+			System.out.println("Congratulations, you've just been accepted to " + school.getName());
 		}
 		else
 		{
-			System.out.println("Sorry, you were not admitted to Hogwarts");
+			print("Thanks for playing, but I'm afraid you're not eligible to attend " + school.getName());
+			System.exit(0);
 		}
 		
-		//TODO: send acceptance letter
+		new AcceptanceLetter(player).print();
+		
+		print("But there's no time to celebrate, you need to reply via owl post and get your supplies");
+		print("It's off to Diagon Alley with you");
+		
 		
 		input.close();
 	}

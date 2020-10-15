@@ -2,6 +2,13 @@ package testwizardry;
 
 public class Hogwarts implements School
 {
+	String name = "Hogwarts";
+	
+	public String getName()
+	{
+		return name;
+	}
+	
 	public boolean admit(Person person)
 	{
 		if (person.age != 11)
@@ -17,7 +24,6 @@ public class Hogwarts implements School
 		return true;
 	}
 
-	@Override
 	public boolean expel(Person person)
 	{
 		// TODO Auto-generated method stub
