@@ -1,30 +1,56 @@
 package testwizardry;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 import static testwizardry.Gender.*;
 
 public class PersonTest
 {
 	Person harry = new Person("Harry Potter", male, 11);
 	Person hermione = new Person("Hermione Granger", female, 11);
+	Person albus = new Person("Albus Dumbledore", male, 99);
 	
 	@Test
 	public void shouldHaveName()
 	{
-		Assert.assertEquals(harry.name, "Harry Potter");
-		Assert.assertEquals(hermione.name, "Hermione Granger");
+		assertEquals(harry.name, "Harry Potter");
+		assertEquals(hermione.name, "Hermione Granger");
 	}
 
 	@Test
 	public void shouldGiveFirstName()
 	{
-		Assert.assertEquals(harry.getFirstName(), "Harry");
-		Assert.assertEquals(hermione.getFirstName(), "Hermione");
+		assertEquals(harry.getFirstName(), "Harry");
+		assertEquals(hermione.getFirstName(), "Hermione");
 	}
 	
+	@Test
 	public void shouldGiveLastName()
 	{
-		// todo implement (Lesson 8)
+		assertEquals(harry.getLastName(), "Potter"); // failing -- bug
+		assertEquals(hermione.getLastName(), "Granger");
 	}
+	
+	@Test 
+	public void shouldHaveAge()
+	{
+		assertEquals(harry.getAge(), 11);
+		assertEquals(albus.getAge(), 99);
+	}
+	
+	@Test
+	public void shouldBeAbleToChangeAge()
+	{
+		harry.setAge(12);
+		assertEquals(harry.getAge(), 12); // failing -- test race condition
+	}
+	
+	@Test 
+	public void shouldHaveGender()
+	{
+		assertEquals(harry.getGender(), male);
+		assertEquals(hermione.getGender(), female);
+	}
+	
 }
