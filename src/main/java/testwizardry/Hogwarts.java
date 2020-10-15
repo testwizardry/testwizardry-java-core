@@ -17,4 +17,11 @@ public class Hogwarts implements School
 		return true;
 	}
 
+	@Override
+	public boolean expel(Person person)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
