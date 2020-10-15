@@ -19,9 +19,12 @@ public class TestWizardryConsole
 	{
 		input = new Scanner(System.in);
 		
-		System.out.println("Welcome to Test Wizardry!");
+		print("Welcome to Test Wizardry!");
 		
 		String name = askName();
+		
+		print("Tell me a bit about yourself.");
+
 		Gender gender = askGender();
 		int age = askAge();
 		
@@ -29,16 +32,18 @@ public class TestWizardryConsole
 		System.out.println(player);
 		
 		School hogwarts = new Hogwarts();
-		boolean admitted = hogwarts.admit(player);
+		boolean accepted = hogwarts.admit(player);
 		
-		if (admitted)
+		if (accepted)
 		{
-			System.out.println("Congratulations, you've been admitted to Hogwarts!");
+			System.out.println("Congratulations, you've just been accepted to Hogwarts!");
 		}
 		else
 		{
 			System.out.println("Sorry, you were not admitted to Hogwarts");
 		}
+		
+		//TODO: send acceptance letter
 		
 		input.close();
 	}
@@ -85,6 +90,11 @@ public class TestWizardryConsole
 		{
 			print("You're a witch!");
 		}
+		else
+		{
+			print("I'm sorry, I didn't understand");
+			System.exit(0);
+		}
 		
 		return gender;
 	}
@@ -108,6 +118,11 @@ public class TestWizardryConsole
 			print("Are you sure that's you're real age?");
 			print("How old are you really? (Hint: say 11)");
 			age = Integer.valueOf(input.nextLine());
+		}
+		
+		if (age == 11)
+		{
+			print("Well, happy birthday!");
 		}
 		
 		return age;
